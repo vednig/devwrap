@@ -103,29 +103,29 @@ def get_developer_stats():
     project_categories = {"big": 0, "medium": 0, "small": 0}
     total_contributions = 0
 
-    for repo in repos:
-        # Get repository's commit history
-        commits_url = f'https://api.github.com/repos/{GITHUB_USERNAME}/{repo["name"]}/commits?since={current_year}-01-01T00:00:00Z'
-        commits = get_github_data(commits_url)
+    # for repo in repos:
+    #     # Get repository's commit history
+    #     commits_url = f'https://api.github.com/repos/{GITHUB_USERNAME}/{repo["name"]}/commits?since={current_year}-01-01T00:00:00Z'
+    #     commits = get_github_data(commits_url)
         
-        # Count commits containing "bug" in their message
-        for commit in commits:
-            if 'bug' in commit['commit']['message'].lower():
-                commits_with_bug += 1
+    #     # Count commits containing "bug" in their message
+    #     for commit in commits:
+    #         if 'bug' in commit['commit']['message'].lower():
+    #             commits_with_bug += 1
         
-        # Count lines of code (just an approximation using repo size)
-        total_lines_of_code += repo['size'] * 10  # Estimation
+    #     # Count lines of code (just an approximation using repo size)
+    #     total_lines_of_code += repo['size'] * 10  # Estimation
 
-        # Categorize projects by size
-        if repo['size'] > 1000:
-            project_categories["big"] += 1
-        elif repo['size'] > 500:
-            project_categories["medium"] += 1
-        else:
-            project_categories["small"] += 1
+    #     # Categorize projects by size
+    #     if repo['size'] > 1000:
+    #         project_categories["big"] += 1
+    #     elif repo['size'] > 500:
+    #         project_categories["medium"] += 1
+    #     else:
+    #         project_categories["small"] += 1
 
-        # Count contributions (each commit is a contribution)
-        total_contributions += len(commits)
+    #     # Count contributions (each commit is a contribution)
+    #     total_contributions += len(commits)
 
     # Stack Overflow: Get user statistics
     stackoverflow_url = f'https://api.stackexchange.com/2.3/users/{STACK_OVERFLOW_USER_ID}/questions?site=stackoverflow'
