@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { TreesIcon as ChristmasTree, Gift, Snowflake, Share2 } from 'lucide-react'
+import { TreesIcon as ChristmasTree, Snowflake, Share2 } from 'lucide-react'
 import ProfileCard, { getProfileCardType } from './profile-card'
 import { Button } from '@/components/ui/button'
 
@@ -34,8 +34,8 @@ export default function FinalSlide({ stats, devStats, githubUsername }: FinalSli
   const profileCardType = getProfileCardType(devStats.total_contributions)
 
   const handleShare = async () => {
-    const shareUrl = `${window.location.origin}?github=${githubUsername}&contributions=${devStats.total_contributions}&lines=${devStats.total_linesize_of_code}&bugs=${devStats.total_commits_with_bug}`
-    const shareText = `Check out my developer stats for 2024! I wrote ${devStats.total_linesize_of_code.toLocaleString()} lines of code and made ${devStats.total_contributions} contributions!`
+    const shareUrl = `on ${window.location.origin}`
+    const shareText = `Check your developer stats for 2024! I wrote ${devStats.total_linesize_of_code.toLocaleString()} lines of code and made ${devStats.total_contributions} contributions!`
     
     try {
       if (navigator.share) {
@@ -141,7 +141,7 @@ export default function FinalSlide({ stats, devStats, githubUsername }: FinalSli
             transition={{ delay: 0.7, duration: 0.5 }}
             className="text-xl text-white text-center"
           >
-            You've had an amazing year! May your code be merry and bright! 🎄✨
+            You&apos;ve had an amazing year! May your code be merry and bright! 🎄✨
           </motion.p>
         </motion.div>
       </div>

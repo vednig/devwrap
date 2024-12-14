@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Github, SquareStackIcon as StackIcon, TreesIcon as ChristmasTree } from 'lucide-react'
+import {  TreesIcon as ChristmasTree } from 'lucide-react'
 
 interface UserInputProps {
   onSubmit: (githubUrl: string, stackOverflowUrl: string) => void
