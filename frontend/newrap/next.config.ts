@@ -1,5 +1,6 @@
+import type { NextConfig } from "next";
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   /* config options here */
   /* config options here */
   images: {
