@@ -10,9 +10,9 @@ import redis
 from flask_cors import CORS
 
 r = redis.Redis(
-  host='concise-earwig-24885.upstash.io',
+  host='redis.host',
   port=6379,
-  password='AWE1AAIjcDEyM2YxNDU4OWY2ZTI0Y2I1YWU1MWZmZTIxMDg5M2UyYnAxMA',
+  password='redis-password',
   ssl=True
 )
 
